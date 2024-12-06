@@ -1,7 +1,7 @@
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-center">
-      <h1>Starter</h1>
-    </main>
-  );
+import { redirect } from 'next/navigation';
+
+export const dynamic = 'force-dynamic';
+
+export default function RootPage() {
+  redirect('/en');
 }
