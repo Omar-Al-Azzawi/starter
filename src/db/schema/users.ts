@@ -1,8 +1,6 @@
-import { text, pgTable, timestamp, varchar } from "drizzle-orm/pg-core";
+import { text, pgTable, timestamp, varchar, uuid } from "drizzle-orm/pg-core";
 const users = pgTable("users", {
-    id: text("id")
-        .primaryKey()
-        .$defaultFn(() => crypto.randomUUID()),
+    id: uuid('id').primaryKey().defaultRandom(),
     name: varchar({ length: 255 }).notNull(),
     email: varchar({ length: 255 }).notNull().unique(),
     password: varchar({ length: 255 }).notNull(),
