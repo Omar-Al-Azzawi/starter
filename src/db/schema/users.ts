@@ -1,10 +1,13 @@
-import { integer, pgTable, timestamp, varchar } from "drizzle-orm/pg-core";
+import { text, pgTable, timestamp, varchar } from "drizzle-orm/pg-core";
 const users = pgTable("users", {
-    id: integer().primaryKey().generatedAlwaysAsIdentity(),
-    firstName: varchar({ length: 255 }).notNull(),
-    lastName: varchar({ length: 255 }).notNull(),
+    id: text("id")
+        .primaryKey()
+        .$defaultFn(() => crypto.randomUUID()),
+    name: varchar({ length: 255 }).notNull(),
     email: varchar({ length: 255 }).notNull().unique(),
     password: varchar({ length: 255 }).notNull(),
+    image: text("image"),
+    emailVerified: timestamp("emailVerified", { mode: "date" }),
     createdAt: timestamp('created_at', { mode: 'string' })
         .notNull()
         .defaultNow(),

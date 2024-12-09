@@ -2,5 +2,9 @@
     "HomePage": {
         "title": "Hello world!",
         "about": "Go to the about page"
+    },
+    "NotFound": {
+        "title": "Page not found",
+        "returnToHome": "Return to home"
     }
 }
