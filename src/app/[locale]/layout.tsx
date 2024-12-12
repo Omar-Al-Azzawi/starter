@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { getMessages } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
+import { Toaster } from "@/components/ui/sonner"
 
 import './globals.css';
 
@@ -25,6 +26,7 @@ export default async function LocaleLayout({
             <body className="flex min-h-screen w-full flex-col">
                 <NextIntlClientProvider messages={messages}>
                     <Suspense>{children}</Suspense>
+                    <Toaster />
                 </NextIntlClientProvider>
             </body>
         </html>

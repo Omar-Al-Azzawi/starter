@@ -5,7 +5,7 @@ import { Ghost } from 'lucide-react';
 import '../app/[locale]/globals.css';
 
 export default function NotFound() {
-    const t = useTranslations('NotFound');
+    const t = useTranslations('Pages.NotFound');
 
     return (
         <html>
