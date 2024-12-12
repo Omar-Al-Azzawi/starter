@@ -1,44 +1,46 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { SignUpForm } from "@/forms/sign-up/form";
-import { ArrowLeftIcon } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { useLocale, useTranslations } from "next-intl";
+import Image from "next/image";
+import { SignUp } from "@/forms/sign-up/form";
+import { useTranslations } from "next-intl";
+import illustration from '@/assets/pixeltrue-space-discovery-1.png';
+import BackButton from "@/components/buttons/back";
 
 const SignUpPage = () => {
     const t = useTranslations();
-    const locale = useLocale();
 
     return (
-        <Card className="w-full">
-            <CardHeader>
-                <div className="flex items-center justify-between">
-                    <Button variant="ghost" className="text-muted-foreground" asChild>
-                        <Link href="/">
-                            <ArrowLeftIcon className="w-4 h-4 mr-2" />
-                            {t('Actions.back')}
-                        </Link>
-                    </Button>
+        <div className="flex min-h-screen">
+            <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
+                <BackButton />
+                <div className="mx-auto w-full max-w-sm lg:w-96">
+                    <div className="space-y-6">
+                        <div>
+                            <h1 className="text-4xl font-bold tracking-tight text-[#1a1147]">{t('Pages.SignUp.title')}</h1>
+                            <p className="mt-2 text-sm text-gray-500">{t('Pages.SignUp.welcome')}</p>
+                        </div>
+
+                        <SignUp />
+
+                        <div className="text-sm">
+                            {t('Pages.SignUp.alreadyHaveAccount')} {' '}
+                            <Link href="/sign-in" className="text-[#e86b67] hover:text-[#e55853]">
+                                {t('Pages.SignUp.signIn')}
+                            </Link>
+                        </div>
+                    </div>
                 </div>
-                <CardTitle className="text-2xl font-semibold mt-4">
-                    {t('Pages.SignUp.title')}
-                </CardTitle>
-                <CardDescription>
-                    {t('Pages.SignUp.welcome')}
-                </CardDescription>
-            </CardHeader>
-            <CardContent>
-                <SignUpForm />
-            </CardContent>
-            <CardFooter className="flex justify-center">
-                <p className="text-sm text-muted-foreground">
-                    {t('Pages.SignUp.alreadyHaveAccount')}
-                    <Link href={`/${locale}/sign-in`} className="text-primary hover:underline">
-                        {t('Pages.SignUp.signIn')}
-                    </Link>
-                </p>
-            </CardFooter>
-        </Card>
+            </div>
+            <div className="relative hidden w-0 flex-1 lg:block">
+                <Image
+                    className="absolute inset-0 h-full w-full object-cover"
+                    src={illustration}
+                    alt="Rocket illustration"
+                    width={400}
+                    height={400}
+                    priority
+                />
+            </div>
+        </div>
     )
 }
 

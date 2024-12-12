@@ -7,14 +7,21 @@
             "title": "Sign In",
             "returnToHome": "Return to home",
             "welcome": "Welcome back! Please sign in to continue.",
-            "dontHaveAccount": "Don&apos;t have an account yet?",
+            "dontHaveAccount": "Do not have an account yet?",
             "signUp": "Sign Up"
         },
         "SignUp": {
             "title": "Sign Up",
             "welcome": "Enter your details below to create your account",
             "alreadyHaveAccount": "Already have an account?",
-            "signIn": "Sign In"
+            "signIn": "Sign In",
+            "creatingAccount": "Creating your account...",
+            "accountCreatedSuccessfully": "Account created successfully! Please sign in.",
+            "unexpectedError": "An unexpected error occurred. Please try again.",
+            "username": "Username",
+            "email": "Email",
+            "password": "Password",
+            "signUp": "Sign Up"
         },
         "NotFound": {
             "title": "Page not found",
