@@ -1,15 +1,14 @@
 'use client'
 
-import { Button } from "@/components/ui/button";
-import { signOutAction } from "./action";
+import { Button } from '@/components/ui/button'
+import { signOutAction } from './action'
 
 const SignOut = () => {
-
-    return (
-        <form action={signOutAction}>
-            <Button type='submit'>Sign Out</Button>
-        </form>
-    )
+  return (
+    <form action={signOutAction}>
+      <Button type="submit">Sign Out</Button>
+    </form>
+  )
 }
 
-export default SignOut; 
+export default SignOut

@@ -1,17 +1,17 @@
-import { drizzle } from 'drizzle-orm/postgres-js';
-import postgres from 'postgres';
+import { drizzle } from 'drizzle-orm/postgres-js'
+import postgres from 'postgres'
 
-import env from '@/env';
+import env from '@/env'
 
-import * as schema from './schema/index';
+import * as schema from './schema/index'
 
 export const connection = postgres(env.DATABASE_URL, {
-    max: env.DB_MIGRATING ? 1 : undefined,
-});
+  max: env.DB_MIGRATING ? 1 : undefined,
+})
 const db = drizzle(connection, {
-    schema,
-});
+  schema,
+})
 
-export type db = typeof db;
+export type db = typeof db
 
-export default db;
+export default db
