@@ -107,7 +107,8 @@ export function SignUp() {
                 />
 
                 <Button
-                    className="w-14 h-14 rounded-2xl bg-[#e86b67] hover:bg-[#e55853] mt-4"
+                    variant="primary"
+                    // className="w-14 h-14 rounded-2xl bg-[#e86b67] hover:bg-[#e55853] mt-4"
                     type="submit"
                 >
                     <ArrowRight className="h-6 w-6" />

@@ -9,7 +9,7 @@ const BackButton = ({ href }: { href?: string }) => {
     const locale = useLocale();
 
     return (
-        <Link href={`/${locale}/${href}`} className="text-sm text-gray-500 hover:text-gray-700 flex items-center gap-2 mb-4">
+        <Link href={href ? `/${locale}/${href}` : `/`} className="text-sm text-gray-500 hover:text-gray-700 flex items-center gap-2 mb-4">
             <ArrowLeftIcon className="w-4 h-4" />
             {t('Actions.back')}
         </Link>

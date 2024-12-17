@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form";
 import { authClient } from "@/lib/auth-client";
 import formSchema from "./schema";
 import { toast } from "sonner";
-import { ArrowRight, LogIn } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export default function SignIn() {
     const form = useForm<z.infer<typeof formSchema>>({
@@ -48,7 +48,7 @@ export default function SignIn() {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4">
                 <FormField
                     control={form.control}
                     name="email"
@@ -76,7 +76,7 @@ export default function SignIn() {
                     )}
                 />
                 <Button
-                    className="w-14 h-14 rounded-2xl bg-[#e86b67] hover:bg-[#e55853] mt-4"
+                    variant="primary"
                     type="submit"
                 >
                     <ArrowRight className="h-6 w-6" />

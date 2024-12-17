@@ -4,11 +4,7 @@ import SignOut from "@/forms/sign-out/form";
 import { authClient } from "@/lib/auth-client";
 
 const DashboardPage = () => {
-    const {
-        data: session,
-        isPending,
-        error
-    } = authClient.useSession()
+    const { data: session } = authClient.useSession()
 
     return (
         <div>
