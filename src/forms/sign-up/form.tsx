@@ -17,10 +17,13 @@ import { ArrowRight } from 'lucide-react'
 import { authClient } from "@/lib/auth-client"
 import { toast } from "sonner"
 import formSchema from "./schema"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
+import { useRouter } from "next/navigation"
 
 export function SignUp() {
     const t = useTranslations();
+    const locale = useLocale();
+    const router = useRouter();
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -45,6 +48,7 @@ export function SignUp() {
                 onSuccess: () => {
                     toast.success(t('Pages.SignUp.accountCreatedSuccessfully'))
                     form.reset()
+                    router.push(`/${locale}/sign-in`)
                 },
                 onError: (ctx) => {
                     console.log({ ctx })

@@ -21,7 +21,11 @@
             "username": "Username",
             "email": "Email",
             "password": "Password",
-            "signUp": "Sign Up"
+            "signUp": "Sign Up",
+            "emailVerified": "Email Verified!",
+            "emailVerifiedDescription": "Your email has been successfully verified. You now have full access to your account.",
+            "emailVerifiedDescription2": "A verified email helps us keep your account secure and allows us to send you important notifications.",
+            "goToDashboard": "Go to Dashboard"
         },
         "NotFound": {
             "title": "Page not found",
