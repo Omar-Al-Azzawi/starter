@@ -34,6 +34,48 @@
     "HomePage": {
       "title": "Hello world!",
       "about": "Go to the about page"
+    },
+    "ForgotPassword": {
+      "title": "Forgot Password",
+      "description": "Enter your email address below to receive a password reset link.",
+      "email": "Email",
+      "sendResetLink": "Send Reset Link",
+      "sendingResetLink": "Sending reset link...",
+      "resetLinkSentSuccessfully": "Reset link sent successfully!",
+      "unexpectedError": "An unexpected error occurred. Please try again.",
+      "backToSignIn": "Back to Sign In",
+      "signIn": "Sign In"
+    },
+    "ResetPassword": {
+      "title": "Reset Password",
+      "description": "Enter your new password below to reset your password.",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "resetPassword": "Reset Password",
+      "passwordPlaceholder": "Enter your new password",
+      "confirmPasswordPlaceholder": "Confirm your new password"
+    }
+  },
+  "Forms": {
+    "SignInForm": {
+      "forgotPassword": "Forgot password?",
+      "password": "Password",
+      "passwordPlaceholder": "********",
+      "email": "Email",
+      "signIn": "Sign In",
+      "signingYouIn": "Signing you in...",
+      "signedInSuccessfully": "Signed in successfully!",
+      "unexpectedError": "An unexpected error occurred. Please try again."
+    },
+    "ForgotPasswordForm": {
+      "title": "Forgot Password",
+      "description": "Enter your email address below to receive a password reset link.",
+      "email": "Email",
+      "sendResetLink": "Send Reset Link",
+      "sendingResetLink": "Sending reset link...",
+      "resetLinkSentSuccessfully": "Reset link sent successfully!",
+      "unexpectedError": "An unexpected error occurred. Please try again.",
+      "backToSignIn": "Back to Sign In"
     }
   }
 }
