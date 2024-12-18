@@ -1,63 +1,68 @@
-# Next.js Starter kit Project
+# Next.js Starter Kit
 
-## Tools Used
+Welcome to the Next.js Starter Kit! This project leverages modern tools and best practices to help you kickstart your application development.
+
+## Tools and Technologies
 
 - [Next.js v15](https://nextjs.org/)
 - [Drizzle ORM](https://orm.drizzle.team/)
 - [Better-Auth](https://www.better-auth.com/)
-- [Shadcn](https://ui.shadcn.com/)
+- [Shadcn UI Components](https://ui.shadcn.com/)
 - [Prettier](https://prettier.io/)
 - [Next-Intl](https://next-intl.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Lucide Icons](https://lucide.dev/)
 - [Resend](https://resend.com/)
 
-## Locale development guidelines
+## Development Setup
 
-1. **Clone the Repository**
+### 1. Clone the Repository
 
-   ```bash
-   git clone https://github.com/Omar-Al-Azzawi/starter.git
-   cd starter
-   ```
+```bash
+git clone https://github.com/Omar-Al-Azzawi/starter.git
+cd starter
+```
 
-2. **Install Dependencies**
+### 2. Install Dependencies
 
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
-3. **Run the Development Server**
+### 3. Start the Development Server
 
-   ```bash
-   npm run dev
-   ```
+```bash
+npm run dev
+```
 
-4. **Open Your Browser**
+Visit [http://localhost:3000](http://localhost:3000) to view the application.
 
-   - Visit `http://localhost:3000` to view the application.
+### 4. Code Formatting
 
-5. **Lint and Format Code**
+Ensure consistent code formatting with Prettier:
 
-   - Use Prettier to format your code:
-     ```bash
-     npm run format
-     ```
+```bash
+npm run format
+```
 
-6. **Internationalization**
+## Internationalization (i18n)
 
-   - Use Next-Intl for managing translations.
-   - Add your translations to the `messages` folder.
+This project uses Next-Intl for localization. Follow these steps to manage translations:
 
-   **_Example_**
+1. Add translations to the `src/messages` folder.
+
+   **Example:**
 
    ```json
+   // src/messages/en.json
    {
-     "HomePage": { "title": "Home Page" }
+     "HomePage": {
+       "title": "Home Page"
+     }
    }
    ```
 
-   - Use the `useTranslations` hook to get the translations in your client components.
+2. Access translations in client components using `useTranslations`:
 
    ```tsx
    import { useTranslations } from 'next-intl'
@@ -66,20 +71,7 @@
    return <h1>{t('title')}</h1>
    ```
 
-   - Use the `useLocale` hook to get the current locale.
-
-   ```tsx
-   import { useLocale } from 'next-intl'
-
-   const locale = useLocale()
-   return (
-     <Link href={`/${locale}`}>
-       <Button>{locale}</Button>
-     </Link>
-   )
-   ```
-
-   - Use the `getTranslations` function to get the translations in your server components.
+3. Access translations in server components using `getTranslations`:
 
    ```tsx
    import { getTranslations } from 'next-intl/server'
@@ -92,98 +84,100 @@
    }
    ```
 
-   - Use the `getLocale` function to get the current locale in your server components.
+4. Determine the current locale using `useLocale` or `getLocale`:
 
    ```tsx
-   import { getLocale } from 'next-intl/server'
+   import { useLocale } from 'next-intl'
 
-   const locale = await getLocale()
-   return {
-     locale,
-   }
+   const locale = useLocale()
+   return <span>{locale}</span>
    ```
 
-7. **Authentication**
+## Authentication
 
-   - Authentication using Better-Auth, visit [Better-Auth](https://www.better-auth.com/docs/installation) to get started and generate a secret key and add it to the `.env` file `BETTER_AUTH_SECRET_KEY`.
+Integrate authentication using Better-Auth:
 
-8. **Database**
+1. Visit [Better-Auth documentation](https://www.better-auth.com/docs/installation) to set up.
+2. Add your secret key to the `.env` file:
 
-   - Use Drizzle ORM for database operations.
+   ```env
+   BETTER_AUTH_SECRET_KEY=your_secret_key
+   ```
 
-   **Setup Drizzle ORM**
+## Database Management
 
-   - **Configure Database Connection**
+This project uses Drizzle ORM for database operations.
 
-     - Create a `.env` file in the root of your project and add your database connection string:
-       ```env
-       DATABASE_URL=your_database_connection_string
-       ```
+1. **Configure Database Connection**
 
-   - **Initialize Drizzle**
+   Add your connection string to the `.env` file:
 
-     - Run the following command to initialize Drizzle in your project:
-       ```bash
-        npm run db init
-       ```
+   ```env
+   DATABASE_URL=your_database_connection_string
+   ```
 
-   - **Run Migrations**
+2. **Initialize Drizzle**
 
-     - Apply migrations to your database:
-       ```bash
-        npm run db migrate
-       ```
+   ```bash
+   npm run db init
+   ```
 
-   - **Generate Models**
+3. **Run Migrations**
 
-     - Generate models based on your database schema:
+   ```bash
+   npm run db migrate
+   ```
 
-     **_Example_**
+4. **Generate Models**
 
-     ```js
-     // src/db/schema/users.ts
-      const users = pgTable('users', {
-          id: text('id').primaryKey().default(sql`gen_random_uuid()`),
-          name: text('name').notNull(),
-          email: text('email').notNull().unique(),
-          emailVerified: boolean('emailVerified').notNull(),
-          image: text('image'),
+   Example schema:
 
-     export type User = typeof users.$inferSelect
-     export default users
-     ```
+   ```js
+   // src/db/schema/users.ts
+   import { pgTable, text, boolean, sql } from 'drizzle-orm/pg';
 
-     - Add the models to the `schema/index.ts` file:
+   const users = pgTable('users', {
+     id: text('id').primaryKey().default(sql`gen_random_uuid()`),
+     firstName: text('first_name').notNull(),
+     lastName: text('last_name').notNull(),
+     email: text('email').notNull().unique(),
+     emailVerified: boolean('email_verified').default(false),
+     image: text('image'),
+   });
 
-     ```js
-     // src/db/schema/index.ts
-     export { default as users } from './users'
-     ```
+   export type User = typeof users.$inferSelect;
+   export default users;
+   ```
 
-     - Run the following command to generate the models:
+   Add models to `src/db/schema/index.ts`:
 
-     ```bash
-      npm run db generate
-     ```
+   ```js
+   export { default as users } from './users'
+   ```
 
-   - **Push to Database**
+5. **Push Changes**
 
-     - Push the migrations or generate models to the database:
-       ```bash
-        npm run db push
-       ```
+   ```bash
+   npm run db push
+   ```
 
-   - **Seed Database**
+6. **Seed Database**
 
-     - Seed the database with initial data:
-       ```bash
-        npm run db:seed
-       ```
+   ```bash
+   npm run db:seed
+   ```
 
-9. **UI Components**
+## UI Components
 
-   - Utilize Shadcn for UI components.
+Leverage Shadcn for robust and accessible UI components.
 
-10. **Resend**
+## Email Notifications
 
-    - Setup Resend for email notifications, visit [Resend](https://resend.com/) to get started and get your API key and add it to the `.env` file.
+Set up email notifications with Resend:
+
+1. Visit [Resend](https://resend.com/) and get your API key.
+2. Add the key to the `.env` file:
+
+   ```env
+   RESEND_API_KEY=your_api_key
+   ```
