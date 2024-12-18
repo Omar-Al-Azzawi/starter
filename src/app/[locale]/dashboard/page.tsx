@@ -7,7 +7,7 @@ import { authClient } from '@/lib/auth-client'
 const DashboardPage = () => {
   const {
     data: session,
-   //  isPending
+    //  isPending
   } = authClient.useSession()
 
   // if (!session && !isPending) {

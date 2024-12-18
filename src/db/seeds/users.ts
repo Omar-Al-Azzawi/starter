@@ -6,7 +6,7 @@ const seedUsers = [
   {
     name: 'Admin',
     email: 'admin@example.com',
-    emailVerified: new Date(),
+    emailVerified: true,
     password: bcrypt.hashSync('password', 10),
     image: null,
   },

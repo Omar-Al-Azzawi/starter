@@ -59,9 +59,7 @@ function ResetPasswordContent() {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              <p className="text-center text-gray-600">
-                {t('Pages.ResetPassword.invalidResetLinkDescription')}
-              </p>
+              <p className="text-center text-gray-600">{t('Pages.ResetPassword.invalidResetLinkDescription')}</p>
             </div>
           </CardContent>
         </Card>
@@ -77,13 +75,13 @@ function ResetPasswordContent() {
           name="password"
           render={({ field }) => (
             <FormItem>
-                <FormLabel>{t('Pages.ResetPassword.password')}</FormLabel>
+              <FormLabel>{t('Pages.ResetPassword.password')}</FormLabel>
               <FormControl>
                 <Input type="password" placeholder={t('Pages.ResetPassword.passwordPlaceholder')} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
-          )}    
+          )}
         />
 
         <FormField
