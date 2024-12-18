@@ -1,6 +1,8 @@
+import Image from 'next/image'
 import BackButton from '@/components/buttons/back'
 import ResetPassword from '@/forms/reset-password/form'
 import { useTranslations } from 'next-intl'
+import illustration from '@/assets/pixeltrue-space-discovery-1.png'
 
 const ResetPasswordPage = () => {
   const t = useTranslations()
@@ -17,6 +19,16 @@ const ResetPasswordPage = () => {
             <ResetPassword />
           </div>
         </div>
+      </div>
+      <div className="relative hidden w-0 flex-1 lg:block">
+        <Image
+          className="absolute inset-0 h-full w-full object-cover"
+          src={illustration}
+          alt="Rocket illustration"
+          width={400}
+          height={400}
+          priority
+        />
       </div>
     </div>
   )
