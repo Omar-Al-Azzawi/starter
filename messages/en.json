@@ -8,7 +8,10 @@
       "returnToHome": "Return to home",
       "welcome": "Welcome back! Please sign in to continue.",
       "dontHaveAccount": "Do not have an account yet?",
-      "signUp": "Sign Up"
+      "signUp": "Sign Up",
+      "signingYouIn": "Signing you in...",
+      "signedInSuccessfully": "Signed in successfully!",
+      "unexpectedError": "An unexpected error occurred. Please try again."
     },
     "SignUp": {
       "title": "Sign Up",

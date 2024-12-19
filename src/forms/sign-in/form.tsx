@@ -57,7 +57,7 @@ export default function SignIn() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
         <FormField
           control={form.control}
           name="email"
@@ -76,7 +76,7 @@ export default function SignIn() {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <div className="flex justify-between items-center w-full">
+              <div className="flex justify-between items-center">
                 <FormLabel>{t('Forms.SignInForm.password')}</FormLabel>
                 <Link href={`/${locale}/forgot-password`} className="text-sm text-secondary-foreground hover:underline">
                   {t('Forms.SignInForm.forgotPassword')}
