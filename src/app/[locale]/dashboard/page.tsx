@@ -2,22 +2,14 @@
 
 import SignOut from '@/forms/sign-out/form'
 import { authClient } from '@/lib/auth-client'
-// import { redirect } from 'next/navigation'
 
 const DashboardPage = () => {
-  const {
-    data: session,
-    //  isPending
-  } = authClient.useSession()
-
-  // if (!session && !isPending) {
-  //   return redirect('/')
-  // }
+  const { data } = authClient.useSession()
 
   return (
     <div>
       <h1>Dashboard</h1>
-      <pre>{JSON.stringify(session, null, 2)}</pre>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
       <SignOut />
     </div>
   )

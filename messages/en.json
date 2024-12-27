@@ -1,6 +1,20 @@
 {
   "Actions": {
-    "back": "Back"
+    "back": "Back",
+    "signOut": "Sign Out",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signingOut": "Signing out..."
+  },
+  "Components": {
+    "NavItems": {
+      "profile": "Profile",
+      "settings": "Settings",
+      "signOut": "Sign Out"
+    },
+    "NavUser": {
+      "signOut": "Sign Out"
+    }
   },
   "Pages": {
     "SignIn": {

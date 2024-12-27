@@ -11,6 +11,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@/components/ui/sidebar'
+import { NavUser } from './nav-user'
 
 // Menu items.
 const items = [
@@ -41,6 +42,13 @@ const items = [
   },
 ]
 
+const user = {
+  id: '1',
+  name: 'John Doe',
+  email: 'john@example.com',
+  image: 'https://github.com/shadcn.png',
+}
+
 export function AppSidebar() {
   return (
     <Sidebar collapsible="icon">
@@ -64,7 +72,7 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter className="mb-2">
-        <Settings size={18} />
+        <NavUser user={user} />
       </SidebarFooter>
     </Sidebar>
   )
