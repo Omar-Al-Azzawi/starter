@@ -94,6 +94,9 @@
         "unexpectedError": "Odottamaton virhe tapahtui. Yritä uudelleen.",
         "backToSignIn": "Takaisin kirjautumiseen"
       }
+    },
+    "NavItems": {
+      "home": "Koti"
     }
   }
   

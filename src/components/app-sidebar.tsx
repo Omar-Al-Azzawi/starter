@@ -1,5 +1,3 @@
-import { Calendar, Home, Inbox, Search, Settings } from 'lucide-react'
-
 import {
   Sidebar,
   SidebarContent,
@@ -12,44 +10,13 @@ import {
   SidebarMenuItem,
 } from '@/components/ui/sidebar'
 import { NavUser } from './nav-user'
+import { Session } from '@/lib/auth'
+import { NAV_ITEMS } from '@/constants'
+import { useTranslations } from 'next-intl'
 
-// Menu items.
-const items = [
-  {
-    title: 'Home',
-    url: '#',
-    icon: Home,
-  },
-  {
-    title: 'Inbox',
-    url: '#',
-    icon: Inbox,
-  },
-  {
-    title: 'Calendar',
-    url: '#',
-    icon: Calendar,
-  },
-  {
-    title: 'Search',
-    url: '#',
-    icon: Search,
-  },
-  {
-    title: 'Settings',
-    url: '#',
-    icon: Settings,
-  },
-]
+export function AppSidebar({ session }: { session: Session }) {
+  const t = useTranslations()
 
-const user = {
-  id: '1',
-  name: 'John Doe',
-  email: 'john@example.com',
-  image: 'https://github.com/shadcn.png',
-}
-
-export function AppSidebar() {
   return (
     <Sidebar collapsible="icon">
       <SidebarContent>
@@ -57,12 +24,12 @@ export function AppSidebar() {
           <SidebarGroupLabel>Starter</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {items.map((item) => (
+              {NAV_ITEMS.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <a href={item.url}>
                       <item.icon />
-                      <span>{item.title}</span>
+                      <span>{t(`NavItems.${item.title}`)}</span>
                     </a>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -72,7 +39,7 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter className="mb-2">
-        <NavUser user={user} />
+        <NavUser session={session} />
       </SidebarFooter>
     </Sidebar>
   )

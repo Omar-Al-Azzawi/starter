@@ -6,17 +6,18 @@ import { useForm } from 'react-hook-form'
 import { Button } from '@/components/ui/button'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Loader2 } from 'lucide-react'
 import { authClient } from '@/lib/auth-client'
 import { toast } from 'sonner'
 import formSchema from './schema'
 import { useLocale, useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
-
+import { useState } from 'react'
 export function SignUp() {
   const t = useTranslations()
   const locale = useLocale()
   const router = useRouter()
+  const [isPending, setIsPending] = useState(false)
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -27,6 +28,7 @@ export function SignUp() {
   })
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsPending(true)
     const { name, email, password } = values
     try {
       await authClient.signUp.email(
@@ -58,6 +60,8 @@ export function SignUp() {
     } catch (error) {
       console.log({ error })
       toast.error(t('Pages.SignUp.unexpectedError'))
+    } finally {
+      setIsPending(false)
     }
   }
 
@@ -106,12 +110,12 @@ export function SignUp() {
           )}
         />
 
-        <Button
-          variant="primary"
-          // className="w-14 h-14 rounded-2xl bg-[#e86b67] hover:bg-[#e55853] mt-4"
-          type="submit"
-        >
-          <ArrowRight className="h-6 w-6" />
+        <Button variant="primary" type="submit" disabled={isPending} className="w-full">
+          {isPending ? (
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+          ) : (
+            <ArrowRight className="h-6 w-6" />
+          )}  
         </Button>
       </form>
     </Form>

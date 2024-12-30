@@ -9,14 +9,16 @@ import { useForm } from 'react-hook-form'
 import { authClient } from '@/lib/auth-client'
 import formSchema from './schema'
 import { toast } from 'sonner'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Loader2 } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { useLocale } from 'next-intl'
+import { useState } from 'react'
 
 export default function SignIn() {
   const t = useTranslations()
   const locale = useLocale()
+  const [isPending, setIsPending] = useState(false)
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -30,6 +32,7 @@ export default function SignIn() {
     const { email, password } = values
 
     try {
+      setIsPending(true)
       await authClient.signIn.email(
         {
           email,
@@ -52,12 +55,14 @@ export default function SignIn() {
     } catch (error) {
       console.log({ error })
       toast.error(t('Pages.SignIn.unexpectedError'))
+    } finally {
+      setIsPending(false)
     }
   }
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 w-full">
         <FormField
           control={form.control}
           name="email"
@@ -76,12 +81,15 @@ export default function SignIn() {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <div className="flex justify-between items-center">
-                <FormLabel>{t('Forms.SignInForm.password')}</FormLabel>
-                <Link href={`/${locale}/forgot-password`} className="text-sm text-secondary-foreground hover:underline">
-                  {t('Forms.SignInForm.forgotPassword')}
-                </Link>
-              </div>
+              <div className="flex justify-between items-center w-full">
+                  <FormLabel>{t('Forms.SignInForm.password')}</FormLabel>
+                  <Link 
+                    href={`/${locale}/forgot-password`} 
+                    className="text-sm text-secondary-foreground hover:underline ml-4"
+                  >
+                    {t('Forms.SignInForm.forgotPassword')}
+                  </Link>
+                </div>
               <FormControl>
                 <Input type="password" placeholder={t('Forms.SignInForm.passwordPlaceholder')} {...field} />
               </FormControl>
@@ -89,8 +97,12 @@ export default function SignIn() {
             </FormItem>
           )}
         />
-        <Button variant="primary" type="submit">
-          <ArrowRight className="h-6 w-6" />
+        <Button variant="primary" type="submit" disabled={isPending} className="w-full">
+          {isPending ? (
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+          ) : (
+            <ArrowRight className="h-6 w-6" />
+          )}
         </Button>
       </form>
     </Form>

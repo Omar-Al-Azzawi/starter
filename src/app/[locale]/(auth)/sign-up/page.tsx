@@ -1,12 +1,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { SignUp } from '@/forms/sign-up/form'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import illustration from '@/assets/pixeltrue-space-discovery-1.png'
 import BackButton from '@/components/buttons/back'
 
 const SignUpPage = () => {
   const t = useTranslations()
+  const locale = useLocale()
 
   return (
     <div className="flex min-h-screen">
@@ -23,7 +24,7 @@ const SignUpPage = () => {
 
             <div className="text-sm">
               {t('Pages.SignUp.alreadyHaveAccount')}{' '}
-              <Link href="/sign-in" className="text-[#e86b67] hover:text-[#e55853]">
+              <Link href={`/${locale}/sign-in`} className="text-[#e86b67] hover:text-[#e55853]">
                 {t('Pages.SignUp.signIn')}
               </Link>
             </div>

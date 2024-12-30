@@ -60,7 +60,7 @@
       "sendingResetLink": "Sending reset link...",
       "resetLinkSentSuccessfully": "Reset link sent successfully!",
       "unexpectedError": "An unexpected error occurred. Please try again.",
-      "backToSignIn": "Back to Sign In",
+      "backToSignIn": "Back to",
       "signIn": "Sign In"
     },
     "ResetPassword": {
@@ -71,6 +71,21 @@
       "resetPassword": "Reset Password",
       "passwordPlaceholder": "Enter your new password",
       "confirmPasswordPlaceholder": "Confirm your new password"
+    },
+    "ChangePassword": {
+      "title": "Change Password",
+      "description": "Enter your current password and new password below to change your password.",
+      "currentPassword": "Current Password",
+      "newPassword": "New Password",
+      "changePassword": "Change Password",
+      "currentPasswordPlaceholder": "Enter your current password",
+      "newPasswordPlaceholder": "Enter your new password",
+      "confirmPassword": "Confirm Password",
+      "confirmPasswordPlaceholder": "Confirm your new password"
+    },
+    "Settings": {
+      "title": "Settings",
+      "changePassword": "Change Password"
     }
   },
   "Forms": {
@@ -92,7 +107,10 @@
       "sendingResetLink": "Sending reset link...",
       "resetLinkSentSuccessfully": "Reset link sent successfully!",
       "unexpectedError": "An unexpected error occurred. Please try again.",
-      "backToSignIn": "Back to Sign In"
+      "backToSignIn": "Back to"
     }
+  },
+  "NavItems": {
+    "home": "Home"
   }
 }

@@ -1,7 +1,6 @@
 'use client'
 
 import { ChevronsUpDown, Settings, User } from 'lucide-react'
-
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import {
   DropdownMenu,
@@ -15,17 +14,11 @@ import { SidebarMenu, SidebarMenuButton, SidebarMenuItem, useSidebar } from '@/c
 import Link from 'next/link'
 import { useLocale, useTranslations } from 'next-intl'
 import SignOut from '@/forms/sign-out/form'
-
-type User = {
-  id: string
-  email: string
-  name: string
-  image?: string | null | undefined
-}
+import { Session } from '@/lib/auth'
 
 const userPlaceHolder = ''
 
-export function NavUser({ user }: { user: User }) {
+export function NavUser({ session }: { session: Session }) {
   const { isMobile } = useSidebar()
   const t = useTranslations()
   const locale = useLocale()
@@ -40,12 +33,12 @@ export function NavUser({ user }: { user: User }) {
               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
             >
               <Avatar className="h-8 w-8 rounded-lg">
-                <AvatarImage src={user.image || userPlaceHolder} alt={user.name!} />
-                <AvatarFallback className="rounded-lg">{user.name?.charAt(0).toUpperCase()}</AvatarFallback>
+                <AvatarImage src={session?.user?.image || userPlaceHolder} alt={session?.user?.name || 'User'} />
+                <AvatarFallback className="rounded-lg">{session?.user?.name?.charAt(0).toUpperCase() || 'U'}</AvatarFallback>
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-semibold">{user.name}</span>
-                <span className="truncate text-xs">{user.email}</span>
+                <span className="truncate font-semibold">{session?.user?.name}</span>
+                <span className="truncate text-xs">{session?.user?.email}</span>
               </div>
               <ChevronsUpDown className="ml-auto size-4" />
             </SidebarMenuButton>
@@ -71,7 +64,7 @@ export function NavUser({ user }: { user: User }) {
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            {user ? (
+            {session?.user ? (
               <DropdownMenuItem>
                 <SignOut />
               </DropdownMenuItem>

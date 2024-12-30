@@ -7,8 +7,8 @@ const ProfilePage = () => {
   const { data } = authClient.useSession()
 
   return (
-    <main>
-      <h1 className="text-2xl font-bold">Profile</h1>
+    <main className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Profile</h1>
       <div className="flex flex-col items-center md:flex-row md:items-start md:justify-between">
         <div className="flex flex-col items-center md:flex-row md:items-center">
           <Avatar className="w-20 h-20">
