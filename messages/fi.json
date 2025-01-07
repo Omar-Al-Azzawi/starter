@@ -1,102 +1,101 @@
 {
-    "Actions": {
-      "back": "Takaisin",
-      "signOut": "Kirjaudu ulos",
-      "signIn": "Kirjaudu sisään",
-      "signUp": "Rekisteröidy",
-      "signingOut": "Kirjaudutaan ulos..."
-    },
-    "Components": {
-      "NavItems": {
-        "profile": "Profiili",
-        "settings": "Asetukset",
-        "signOut": "Kirjaudu ulos"
-      },
-      "NavUser": {
-        "signOut": "Kirjaudu ulos"
-      }
-    },
-    "Pages": {
-      "SignIn": {
-        "title": "Kirjaudu sisään",
-        "returnToHome": "Palaa kotiin",
-        "welcome": "Tervetuloa takaisin! Kirjaudu sisään jatkaaksesi.",
-        "dontHaveAccount": "Eikö sinulla ole vielä tiliä?",
-        "signUp": "Rekisteröidy",
-        "signingYouIn": "Kirjaudutaan sisään...",
-        "signedInSuccessfully": "Kirjautuminen onnistui!",
-        "unexpectedError": "Odottamaton virhe tapahtui. Yritä uudelleen."
-      },
-      "SignUp": {
-        "title": "Rekisteröidy",
-        "welcome": "Syötä tietosi alla luodaksesi tilin",
-        "alreadyHaveAccount": "Onko sinulla jo tili?",
-        "signIn": "Kirjaudu sisään",
-        "creatingAccount": "Luodaan tiliä...",
-        "accountCreatedSuccessfully": "Tili luotu onnistuneesti! Kirjaudu sisään.",
-        "unexpectedError": "Odottamaton virhe tapahtui. Yritä uudelleen.",
-        "username": "Käyttäjänimi",
-        "email": "Sähköposti",
-        "password": "Salasana",
-        "signUp": "Rekisteröidy",
-        "emailVerified": "Sähköposti vahvistettu!",
-        "emailVerifiedDescription": "Sähköpostisi on vahvistettu onnistuneesti. Sinulla on nyt täysi pääsy tilillesi.",
-        "emailVerifiedDescription2": "Vahvistettu sähköposti auttaa pitämään tilisi turvassa ja mahdollistaa tärkeiden ilmoitusten lähettämisen.",
-        "goToDashboard": "Siirry hallintapaneeliin"
-      },
-      "NotFound": {
-        "title": "Sivua ei löydy",
-        "returnToHome": "Palaa kotiin"
-      },
-      "HomePage": {
-        "title": "Hei maailma!",
-        "about": "Siirry esittelysivulle"
-      },
-      "ForgotPassword": {
-        "title": "Unohtunut salasana",
-        "description": "Syötä sähköpostiosoitteesi alle saadaksesi salasanan palautuslinkin.",
-        "email": "Sähköposti",
-        "sendResetLink": "Lähetä palautuslinkki",
-        "sendingResetLink": "Lähetetään palautuslinkkiä...",
-        "resetLinkSentSuccessfully": "Palautuslinkki lähetetty onnistuneesti!",
-        "unexpectedError": "Odottamaton virhe tapahtui. Yritä uudelleen.",
-        "backToSignIn": "Takaisin kirjautumiseen",
-        "signIn": "Kirjaudu sisään"
-      },
-      "ResetPassword": {
-        "title": "Nollaa salasana",
-        "description": "Syötä uusi salasanasi alle nollataksesi salasanasi.",
-        "password": "Salasana",
-        "confirmPassword": "Vahvista salasana",
-        "resetPassword": "Nollaa salasana",
-        "passwordPlaceholder": "Syötä uusi salasanasi",
-        "confirmPasswordPlaceholder": "Vahvista uusi salasanasi"
-      }
-    },
-    "Forms": {
-      "SignInForm": {
-        "forgotPassword": "Unohtuiko salasana?",
-        "password": "Salasana",
-        "passwordPlaceholder": "********",
-        "email": "Sähköposti",
-        "signIn": "Kirjaudu sisään",
-        "signingYouIn": "Kirjaudutaan sisään...",
-        "signedInSuccessfully": "Kirjautuminen onnistui!",
-        "unexpectedError": "Odottamaton virhe tapahtui. Yritä uudelleen."
-      },
-      "ForgotPasswordForm": {
-        "title": "Unohtunut salasana",
-        "description": "Syötä sähköpostiosoitteesi alle saadaksesi salasanan palautuslinkin.",
-        "email": "Sähköposti",
-        "sendResetLink": "Lähetä palautuslinkki",
-        "sendingResetLink": "Lähetetään palautuslinkkiä...",
-        "resetLinkSentSuccessfully": "Palautuslinkki lähetetty onnistuneesti!",
-        "unexpectedError": "Odottamaton virhe tapahtui. Yritä uudelleen.",
-        "backToSignIn": "Takaisin kirjautumiseen"
-      }
-    },
+  "Actions": {
+    "back": "Takaisin",
+    "signOut": "Kirjaudu ulos",
+    "signIn": "Kirjaudu sisään",
+    "signUp": "Rekisteröidy",
+    "signingOut": "Kirjaudutaan ulos..."
+  },
+  "Components": {
     "NavItems": {
-      "home": "Koti"
+      "profile": "Profiili",
+      "settings": "Asetukset",
+      "signOut": "Kirjaudu ulos"
+    },
+    "NavUser": {
+      "signOut": "Kirjaudu ulos"
     }
+  },
+  "Pages": {
+    "SignIn": {
+      "title": "Kirjaudu sisään",
+      "returnToHome": "Palaa kotiin",
+      "welcome": "Tervetuloa takaisin! Kirjaudu sisään jatkaaksesi.",
+      "dontHaveAccount": "Eikö sinulla ole vielä tiliä?",
+      "signUp": "Rekisteröidy",
+      "signingYouIn": "Kirjaudutaan sisään...",
+      "signedInSuccessfully": "Kirjautuminen onnistui!",
+      "unexpectedError": "Odottamaton virhe tapahtui. Yritä uudelleen."
+    },
+    "SignUp": {
+      "title": "Rekisteröidy",
+      "welcome": "Syötä tietosi alla luodaksesi tilin",
+      "alreadyHaveAccount": "Onko sinulla jo tili?",
+      "signIn": "Kirjaudu sisään",
+      "creatingAccount": "Luodaan tiliä...",
+      "accountCreatedSuccessfully": "Tili luotu onnistuneesti! Kirjaudu sisään.",
+      "unexpectedError": "Odottamaton virhe tapahtui. Yritä uudelleen.",
+      "username": "Käyttäjänimi",
+      "email": "Sähköposti",
+      "password": "Salasana",
+      "signUp": "Rekisteröidy",
+      "emailVerified": "Sähköposti vahvistettu!",
+      "emailVerifiedDescription": "Sähköpostisi on vahvistettu onnistuneesti. Sinulla on nyt täysi pääsy tilillesi.",
+      "emailVerifiedDescription2": "Vahvistettu sähköposti auttaa pitämään tilisi turvassa ja mahdollistaa tärkeiden ilmoitusten lähettämisen.",
+      "goToDashboard": "Siirry hallintapaneeliin"
+    },
+    "NotFound": {
+      "title": "Sivua ei löydy",
+      "returnToHome": "Palaa kotiin"
+    },
+    "HomePage": {
+      "title": "Hei maailma!",
+      "about": "Siirry esittelysivulle"
+    },
+    "ForgotPassword": {
+      "title": "Unohtunut salasana",
+      "description": "Syötä sähköpostiosoitteesi alle saadaksesi salasanan palautuslinkin.",
+      "email": "Sähköposti",
+      "sendResetLink": "Lähetä palautuslinkki",
+      "sendingResetLink": "Lähetetään palautuslinkkiä...",
+      "resetLinkSentSuccessfully": "Palautuslinkki lähetetty onnistuneesti!",
+      "unexpectedError": "Odottamaton virhe tapahtui. Yritä uudelleen.",
+      "backToSignIn": "Takaisin kirjautumiseen",
+      "signIn": "Kirjaudu sisään"
+    },
+    "ResetPassword": {
+      "title": "Nollaa salasana",
+      "description": "Syötä uusi salasanasi alle nollataksesi salasanasi.",
+      "password": "Salasana",
+      "confirmPassword": "Vahvista salasana",
+      "resetPassword": "Nollaa salasana",
+      "passwordPlaceholder": "Syötä uusi salasanasi",
+      "confirmPasswordPlaceholder": "Vahvista uusi salasanasi"
+    }
+  },
+  "Forms": {
+    "SignInForm": {
+      "forgotPassword": "Unohtuiko salasana?",
+      "password": "Salasana",
+      "passwordPlaceholder": "********",
+      "email": "Sähköposti",
+      "signIn": "Kirjaudu sisään",
+      "signingYouIn": "Kirjaudutaan sisään...",
+      "signedInSuccessfully": "Kirjautuminen onnistui!",
+      "unexpectedError": "Odottamaton virhe tapahtui. Yritä uudelleen."
+    },
+    "ForgotPasswordForm": {
+      "title": "Unohtunut salasana",
+      "description": "Syötä sähköpostiosoitteesi alle saadaksesi salasanan palautuslinkin.",
+      "email": "Sähköposti",
+      "sendResetLink": "Lähetä palautuslinkki",
+      "sendingResetLink": "Lähetetään palautuslinkkiä...",
+      "resetLinkSentSuccessfully": "Palautuslinkki lähetetty onnistuneesti!",
+      "unexpectedError": "Odottamaton virhe tapahtui. Yritä uudelleen.",
+      "backToSignIn": "Takaisin kirjautumiseen"
+    }
+  },
+  "NavItems": {
+    "home": "Koti"
   }
-  
+}

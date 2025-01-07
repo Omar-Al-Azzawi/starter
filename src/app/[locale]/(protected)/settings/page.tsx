@@ -1,6 +1,6 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import ChangePassword from "@/forms/change-passwrd/form"
-import { useTranslations } from "next-intl"
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import ChangePassword from '@/forms/change-passwrd/form'
+import { useTranslations } from 'next-intl'
 
 const SettingPage = () => {
   const t = useTranslations()

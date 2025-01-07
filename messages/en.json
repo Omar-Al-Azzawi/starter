@@ -81,7 +81,16 @@
       "currentPasswordPlaceholder": "Enter your current password",
       "newPasswordPlaceholder": "Enter your new password",
       "confirmPassword": "Confirm Password",
-      "confirmPasswordPlaceholder": "Confirm your new password"
+      "confirmPasswordPlaceholder": "Confirm your new password",
+      "passwordRequirements": "Password Requirements:",
+      "length": "At least 8 characters long",
+      "uppercase": "Contains at least one uppercase letter",
+      "lowercase": "Contains at least one lowercase letter",
+      "number": "Contains at least one number",
+      "special": "Contains at least one special character",
+      "changing": "Changing your password...",
+      "passwordChangedSuccessfully": "Password changed successfully!",
+      "unexpectedError": "An unexpected error occurred. Please try again."
     },
     "Settings": {
       "title": "Settings",
