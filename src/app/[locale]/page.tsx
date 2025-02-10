@@ -1,12 +1,14 @@
 import Link from 'next/link'
 import { Github, Star } from 'lucide-react'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { FeaturesSectionWithHoverEffects } from '@/components/blocks/feature-section-with-hover-effects'
 import { Button } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/theme-toggle'
+import LocalSwitcher from '@/components/local-switcher'
 
 export default function WelcomePage() {
   const locale = useLocale()
+  const t = useTranslations()
 
   return (
     <>
@@ -18,28 +20,26 @@ export default function WelcomePage() {
             <span className="sr-only">starter</span>
           </Link>
           <div className="flex items-center gap-4">
+            <LocalSwitcher lang={locale} />
             <ThemeToggle />
             <Button asChild variant="gradient">
-              <Link href={`/${locale}/sign-in`}>Sign In</Link>
+              <Link href={`/${locale}/sign-in`}>{t('Pages.Home.signIn')}</Link>
             </Button>
           </div>
         </header>
         <section className="flex flex-col items-center justify-center text-center px-4 py-20">
-          <h1 className="max-w-4xl text-4xl md:text-6xl lg:text-8xl font-extrabold mb-8">
-            Build Faster with{" "}
-            <span className="bg-gradient-to-r from-purple-400 to-pink-300 text-transparent bg-clip-text">
-              Next Starter
-            </span>
+          <h1 className="max-w-4xl text-4xl md:text-6xl lg:text-8xl font-extrabold mb-8 bg-gradient-to-r from-purple-400 to-pink-300 text-transparent bg-clip-text">
+            {t('Pages.Home.title')}
           </h1>
 
-          <p className="max-w-2xl text-lg md:text-xl text-gray-500 mb-12">
-            Transform your ideas into reality. Launch your SaaS in minutes with our production-ready Next.js starter.
+          <p className="max-w-2xl text-lg md:text-xl text-gray-500 mb-12 ">
+            {t('Pages.Home.description')}
           </p>
 
           <Button variant="gradient" className="px-8 py-4 font-medium flex items-center gap-2" asChild>
             <Link href="https://github.com/Omar-Al-Azzawi/starter" target="_blank" rel="noopener noreferrer">
               <Github className="w-5 h-5" />
-              Star on GitHub
+              {t('Pages.Home.starOnGitHub')}
             </Link>
           </Button>
         </section>

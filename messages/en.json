@@ -17,6 +17,12 @@
     }
   },
   "Pages": {
+    "Home": {
+      "title": "Build Faster with Next Starter",
+      "description": "Transform your ideas into reality. Launch your SaaS in minutes with our production-ready Next.js starter.",
+      "signIn": "Sign In",
+      "starOnGitHub": "Star on GitHub"
+    },
     "SignIn": {
       "title": "Sign In",
       "returnToHome": "Return to home",

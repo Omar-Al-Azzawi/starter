@@ -6,8 +6,10 @@ import ShadcnIcon from "@/assets/shadcn-ui-icon.png"
 import BetterAuthIcon from "@/assets/better-auth-icon.png"
 import DrizzleIcon from "@/assets/drizzle-icon.png"
 import PrettierIcon from "@/assets/prettier-icon.png"
+import I18nIcon from "@/assets/i18n.png"
 import { StaticImageData } from "next/image"
 import Image from "next/image"
+import { GlobeIcon } from "lucide-react";
 
 interface TechCard {
   title: string
@@ -59,6 +61,12 @@ const techStack: TechCard[] = [
     icon: PrettierIcon,
     href: "https://prettier.io/docs/en/index.html",
   },
+  {
+    title: "Internationalization",
+    description: "Internationalization is the process of making your application available in different languages.",
+    icon: I18nIcon,
+    href: "https://next-intl.dev/",
+  }
 ]
 
 export function FeaturesSectionWithHoverEffects() {

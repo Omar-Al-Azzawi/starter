@@ -17,6 +17,12 @@
     }
   },
   "Pages": {
+    "Home": {
+      "title": "Rakenna nopeammin Next Starterilla",
+      "description": "Muuta ideasi todeksi. Julkaise SaaS-palvelusi minuuteissa tuotantovalmiilla Next.js-pohjalla.",
+      "signIn": "Kirjaudu sisään",
+      "starOnGitHub": "Anna tähti GitHubissa"
+    },
     "SignIn": {
       "title": "Kirjaudu sisään",
       "returnToHome": "Palaa kotiin",
