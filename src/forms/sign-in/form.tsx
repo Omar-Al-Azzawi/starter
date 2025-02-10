@@ -81,15 +81,7 @@ export default function SignIn() {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <div className="flex justify-between items-center w-full">
-                <FormLabel>{t('Forms.SignInForm.password')}</FormLabel>
-                <Link
-                  href={`/${locale}/forgot-password`}
-                  className="text-sm text-secondary-foreground hover:underline ml-4"
-                >
-                  {t('Forms.SignInForm.forgotPassword')}
-                </Link>
-              </div>
+              <FormLabel>{t('Forms.SignInForm.password')}</FormLabel>
               <FormControl>
                 <Input type="password" placeholder={t('Forms.SignInForm.passwordPlaceholder')} {...field} />
               </FormControl>
@@ -97,6 +89,15 @@ export default function SignIn() {
             </FormItem>
           )}
         />
+        <div className="flex justify-end">
+          <Link
+            href={`/${locale}/forgot-password`}
+            className="text-sm text-secondary-foreground hover:underline ml-4"
+          >
+            {t('Forms.SignInForm.forgotPassword')}
+          </Link>
+        </div>
+
         <Button variant="primary" type="submit" disabled={isPending} className="w-full">
           {isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <ArrowRight className="h-6 w-6" />}
         </Button>
