@@ -71,7 +71,7 @@ export default function ForgotPassword() {
             </FormItem>
           )}
         />
-        <Button variant="primary" type="submit">
+        <Button type="submit">
           <ArrowRight className="h-6 w-6" />
           {t('Forms.ForgotPasswordForm.sendResetLink')}
         </Button>

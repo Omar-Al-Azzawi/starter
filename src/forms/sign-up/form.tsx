@@ -110,7 +110,7 @@ export function SignUp() {
           )}
         />
 
-        <Button variant="primary" type="submit" disabled={isPending} className="w-full">
+        <Button variant="default" type="submit" disabled={isPending} className="w-full">
           {isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <ArrowRight className="h-6 w-6" />}
         </Button>
       </form>

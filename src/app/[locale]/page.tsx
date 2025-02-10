@@ -1,43 +1,49 @@
-import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { Mountain } from 'lucide-react'
+import { Github, Star } from 'lucide-react'
 import { useLocale } from 'next-intl'
+import { FeaturesSectionWithHoverEffects } from '@/components/blocks/feature-section-with-hover-effects'
+import { Button } from '@/components/ui/button'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 export default function WelcomePage() {
   const locale = useLocale()
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <header className="px-4 lg:px-6 h-14 flex items-center">
-        <Link className="flex items-center justify-center" href="#">
-          <Mountain className="h-6 w-6" />
-          <span className="sr-only">Acme Inc</span>
-        </Link>
-      </header>
+    <>
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
-          <div className="px-4 md:px-6">
-            <div className="flex flex-col items-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                  Welcome to the Starter kit
-                </h1>
-                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                  This is a starter kit for your next project. It includes a fully functional authentication system, a
-                  dashboard with a sidebar, and a home page.
-                </p>
-              </div>
-              <div className="space-x-4">
-                <Button asChild variant="primary">
-                  <Link href={`/${locale}/sign-in`}>Sign In</Link>
-                </Button>
-                <Button asChild variant="outline">
-                  <Link href={`/${locale}/sign-up`}>Sign Up</Link>
-                </Button>
-              </div>
-            </div>
+        <header className="my-4 mx-4 lg:mx-28 flex justify-between items-center">
+          <Link className="flex items-center justify-center" href="#">
+            <Star className="h-6 w-6" />
+            <span className="text-xl font-bold">ter</span>
+            <span className="sr-only">starter</span>
+          </Link>
+          <div className="flex items-center gap-4">
+            <ThemeToggle />
+            <Button asChild variant="gradient">
+              <Link href={`/${locale}/sign-in`}>Sign In</Link>
+            </Button>
           </div>
+        </header>
+        <section className="flex flex-col items-center justify-center text-center px-4 py-20">
+          <h1 className="max-w-4xl text-4xl md:text-6xl lg:text-8xl font-extrabold mb-8">
+            Build Faster with{" "}
+            <span className="bg-gradient-to-r from-purple-400 to-pink-300 text-transparent bg-clip-text">
+              Next Starter
+            </span>
+          </h1>
+
+          <p className="max-w-2xl text-lg md:text-xl text-gray-500 mb-12">
+            Transform your ideas into reality. Launch your SaaS in minutes with our production-ready Next.js starter.
+          </p>
+
+          <Button variant="gradient" className="px-8 py-4 font-medium flex items-center gap-2" asChild>
+            <Link href="https://github.com/Omar-Al-Azzawi/starter" target="_blank" rel="noopener noreferrer">
+              <Github className="w-5 h-5" />
+              Star on GitHub
+            </Link>
+          </Button>
         </section>
+        <FeaturesSectionWithHoverEffects />
       </main>
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
         <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 starter</p>
@@ -50,6 +56,6 @@ export default function WelcomePage() {
           </Link>
         </nav>
       </footer>
-    </div>
+    </>
   )
 }

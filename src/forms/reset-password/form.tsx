@@ -97,7 +97,7 @@ function ResetPasswordContent() {
             </FormItem>
           )}
         />
-        <Button variant="primary" type="submit" disabled={isPending}>
+        <Button variant="gradient" type="submit" disabled={isPending}>
           {t('Pages.ResetPassword.resetPassword')}
         </Button>
       </form>

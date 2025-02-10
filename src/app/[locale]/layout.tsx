@@ -2,6 +2,7 @@ import { Suspense } from 'react'
 import { getMessages } from 'next-intl/server'
 import { NextIntlClientProvider } from 'next-intl'
 import { Toaster } from '@/components/ui/sonner'
+import { ThemeProvider } from '@/components/theme-provider'
 
 import './globals.css'
 
@@ -18,15 +19,21 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
-
   const messages = await getMessages()
 
   return (
-    <html lang={locale}>
-      <body>
+    <html lang={locale} suppressHydrationWarning>
+      <body className="antialiased">
         <NextIntlClientProvider messages={messages}>
-          <Suspense>{children}</Suspense>
-          <Toaster />
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Suspense>{children}</Suspense>
+            <Toaster />
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>
