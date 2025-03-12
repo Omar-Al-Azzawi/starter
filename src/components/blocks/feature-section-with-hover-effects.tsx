@@ -9,7 +9,6 @@ import PrettierIcon from "@/assets/prettier-icon.png"
 import I18nIcon from "@/assets/i18n.png"
 import { StaticImageData } from "next/image"
 import Image from "next/image"
-import { GlobeIcon } from "lucide-react";
 
 interface TechCard {
   title: string
